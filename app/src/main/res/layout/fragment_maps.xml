@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".activity.MainActivity">
+
+    <fragment
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+    <!--<View-->
+    <!--android:id="@+id/header_view"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/sliding_search_view_header_height"-->
+    <!--android:background="#01579B"/>-->
+
+    <FrameLayout
+        android:id="@+id/dim_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp">
+
+        <com.arlib.floatingsearchview.FloatingSearchView
+            android:id="@+id/floating_search_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:floatingSearch_close_search_on_keyboard_dismiss="false"
+            app:floatingSearch_dimBackground="false"
+            app:floatingSearch_dismissOnOutsideTouch="true"
+            app:floatingSearch_leftActionMode="showSearch"
+            app:floatingSearch_menu="@menu/menu_search_view"
+            app:floatingSearch_searchBarMarginLeft="@dimen/search_view_inset"
+            app:floatingSearch_searchBarMarginRight="@dimen/search_view_inset"
+            app:floatingSearch_searchBarMarginTop="@dimen/search_view_inset"
+            app:floatingSearch_searchHint="Search..."
+            app:floatingSearch_showSearchKey="true"
+            app:floatingSearch_suggestionsListAnimDuration="250"/>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true">
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_my_location_black"
+            android:tint="#424242"
+            app:backgroundTint="@android:color/white"
+            app:elevation="2dp"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_directions_black"
+            android:tint="@android:color/white"
+            app:backgroundTint="@color/colorAccent"
+            app:elevation="2dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
+
