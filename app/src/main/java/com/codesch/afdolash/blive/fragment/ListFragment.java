@@ -38,8 +38,9 @@ public class ListFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_list, container, false);
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+        recyclerView.setFocusable(false);
 
-        doctorAdapter = new DoctorAdapter(doctorList);
+        doctorAdapter = new DoctorAdapter(doctorList, getActivity());
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -53,11 +54,13 @@ public class ListFragment extends Fragment {
     private void prepareDoctorData() {
         Doctor doctor = new Doctor(
                 "Afdolash Nur Kaffah",
-                "Kandungan",
+                "Paru-paru",
                 "Kediri",
                 "081111111111"
         );
-        doctorList.add(doctor);
+
+        for (int i = 0; i < 16; i++)
+            doctorList.add(doctor);
     }
 
 }
