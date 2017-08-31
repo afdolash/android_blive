@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.codesch.afdolash.blive.activity.ChangePhoneNumActivity">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_phone_android_black"
+        android:tint="@color/colorPrimary"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/tv_currPass"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/tv_currPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nomor handphone Anda : "
+        android:textColor="@color/black"
+        android:layout_above="@+id/et_currPass"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/et_currPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_margin="14dp"
+        android:layout_centerInParent="true"
+        android:textSize="20sp"
+        android:inputType="phone"
+        android:hint="Masukkan nomor handphone Anda"/>
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:text="Tekan 'Selesai' untuk menyimpan nomor handphone Anda yang baru."
+        android:layout_below="@+id/et_currPass"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"/>
+
+    <Button
+        android:id="@+id/btn_change"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="14dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Selesai"
+        android:textColor="#fff"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>
