@@ -1,6 +1,7 @@
 package com.codesch.afdolash.blive.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Movie;
 import android.support.transition.TransitionManager;
 import android.support.v4.app.Fragment;
@@ -14,6 +15,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.codesch.afdolash.blive.R;
+import com.codesch.afdolash.blive.activity.DetailActivity;
 import com.codesch.afdolash.blive.model.Doctor;
 
 import java.util.List;
@@ -58,6 +60,13 @@ public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.MyViewHold
         holder.tv_name.setText(doctor.getName());
         holder.tv_address.setText(doctor.getAddress());
         holder.tv_specialist.setText(doctor.getSpecialist());
+        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, DetailActivity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
