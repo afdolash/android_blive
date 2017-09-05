@@ -2,12 +2,15 @@ package com.codesch.afdolash.blive.fragment;
 
 
 import android.*;
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.arlib.floatingsearchview.FloatingSearchView;
 import com.codesch.afdolash.blive.*;
 import com.codesch.afdolash.blive.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -25,6 +28,8 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
     // Google map
     private GoogleMap mGoogleMap;
 
+    private FloatingSearchView mSearchView;
+
     public MapsFragment() {
         // Required empty public constructor
     }
@@ -39,6 +44,21 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+        mSearchView = (FloatingSearchView) view.findViewById(R.id.floating_search_view);
+        mSearchView.setOnMenuItemClickListener(new FloatingSearchView.OnMenuItemClickListener() {
+            @Override
+            public void onActionMenuItemSelected(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.nav_sort:
+                        sortDialog();
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+        });
+
         return view;
     }
 
@@ -52,4 +72,16 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
         mGoogleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mGoogleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
+
+    private void sortDialog() {
+        View view = getActivity().getLayoutInflater().inflate(R.layout.dialog_sort, null);
+
+        // Alert dialog
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(getActivity());
+        mBuilder.setView(view);
+        final AlertDialog dialog = mBuilder.create();
+        dialog.setTitle("Sort");
+        dialog.show();
+    }
+
 }

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.codesch.afdolash.blive.activity.ChangeEmailActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_above="@+id/tv_currPass"
+        android:layout_marginBottom="4dp"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_email_black"
+            android:tint="@color/colorPrimary"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_compare_arrows_black"
+            android:tint="@color/black"/>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_email_black"
+            android:tint="@color/colorPrimary"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_currPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alamat email baru :"
+        android:textColor="@color/black"
+        android:layout_above="@+id/et_newEmail"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/et_newEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_margin="14dp"
+        android:layout_centerInParent="true"
+        android:textSize="20sp"
+        android:inputType="textEmailAddress"
+        android:hint="Masukkan alamat email baru"/>
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:text="Tekan 'Selesai' untuk menyimpan alamat email Anda yang baru."
+        android:layout_below="@+id/et_newEmail"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"/>
+
+    <Button
+        android:id="@+id/btn_change"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="14dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Selesai"
+        android:textColor="#fff"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>
